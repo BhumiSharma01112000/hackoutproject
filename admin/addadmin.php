@@ -129,6 +129,87 @@
 						<!--<p class="square"> -->
 					  <img src="../photos/default.png" id="profile-img-tag" alt="Profile Pic" width="200px" height="200px" style="border:5px solid #ffffff; background-color: #ffffff;" />
 						<script type="text/javascript">
+							function validate()
+      {
+		  var name = document.myForm.fullname.value;
+		  var email = document.myForm.email.value;
+		  var pass = document.myForm.password.value;
+	      
+	      if(name == "")
+		 {
+		 document.getElementById("name").innerHTML="Please Fill Name Filed.";
+		 document.myForm.fullname.focus() ;
+            return false;
+         }
+		 else{
+			 document.getElementById("name").innerHTML="";
+		 }
+		 
+		 if( email == "" )
+         {
+            document.getElementById("email").innerHTML="Please Fill the username field";
+            document.myForm.email.focus() ;
+            return false;
+         }
+		 else{
+			document.getElementById("email").innerHTML=""; 
+		 }
+		 if((email.length <= 5) || (email.length > 25) )
+		 {
+			document.getElementById("email").innerHTML="user length must be between 5 and 25";
+            document.myForm.email.focus() ;
+            return false;
+		 }
+		 else{
+			document.getElementById("email").innerHTML=""; 
+		 }
+		 if(!isNaN(email))
+		 {
+			document.getElementById("email").innerHTML="Only character allowed";
+            document.myForm.email.focus() ;
+            return false;
+		 }
+		 else{
+			document.getElementById("email").innerHTML=""; 
+		 }
+		 if(email.indexOf('@') <= 0)
+		 {
+			document.getElementById("email").innerHTML="@ Invalid Position ";
+            document.myForm.email.focus() ;
+            return false;
+		 }
+		 else{
+			document.getElementById("email").innerHTML=""; 
+		 }
+		 if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.'))
+		 {
+			document.getElementById("email").innerHTML=". Invalid Position ";
+            document.myForm.email.focus() ;
+			 return false;
+		 }
+		 else
+		 {
+			 document.getElementById("email").innerHTML="";
+		 }
+		 
+		if( pass == "" )
+         {
+            document.getElementById("password").innerHTML="Please Fill the password field";
+            document.myForm.password.focus() ;
+            return false;
+         }
+		 else{
+			document.getElementById("password").innerHTML=""; 
+		 }
+		 if((pass.length <= 5) || (pass.length > 20) )
+		 {
+			document.getElementById("password").innerHTML="password length must be between 5 and 20";
+            document.myForm.password.focus() ;
+            return false;
+		 }	
+		else{
+			document.getElementById("password").innerHTML=""; 
+		 }
 							function readURL(input)
                             {
 								if (input.files && input.files[0]) 
